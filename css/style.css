@@ -67,6 +67,56 @@ h2 {
   border: 1px solid #e0e0e0; /* Borde suave */
 }
 
+/* Animación de desvanecimiento para los contenedores de misión y visión */
+.mission-container, .vision-container {
+  opacity: 0; /* Empezamos con opacidad 0 para la animación */
+  transform: translateY(20px); /* Desplazamos ligeramente hacia abajo */
+  animation: fadeInUp 1s forwards; /* Animación al entrar */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transición suave */
+}
+
+/* Animación de entrada para el texto */
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Añadir retraso de animación para el contenedor de visión */
+.vision-container {
+  animation-delay: 0.5s; /* Retraso para la visión */
+}
+
+/* Efecto hover para las imágenes */
+.mission-container img, .vision-container img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Zoom en la imagen al pasar el ratón */
+.mission-container img:hover, .vision-container img:hover {
+  transform: scale(1.05); /* Zoom ligeramente */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada */
+}
+
+/* Animación de desvanecimiento cuando se hace scroll (aparece al hacer scroll) */
+.mission-container, .vision-container {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.mission-container.visible, .vision-container.visible {
+  opacity: 1;
+}
+
+
+
+
 /* Asegurarse de que el contenedor esté centrado en pantallas grandes */
 .container {
   max-width: 960px; /* Establecer un tamaño máximo para el contenedor */
@@ -292,6 +342,44 @@ a:focus {
   width: 100%;
 }
 
+/* Estilo para la imagen en la sección hero */
+.hero_img-container {
+  overflow: hidden; /* Ocultar cualquier parte de la imagen que sobresalga */
+}
+
+/* Animación para la imagen */
+.hero_img-container img {
+  transition: transform 0.5s ease, filter 0.5s ease, box-shadow 0.5s ease; /* Transiciones suaves para transformaciones */
+  transform: translateX(0); /* Inicia la imagen sin movimiento */
+  filter: brightness(90%); /* Da un toque de sombra a la imagen por defecto */
+}
+
+/* Efecto al pasar el ratón (hover): Movimiento y brillo */
+.hero_img-container img:hover {
+  transform: translateX(10px) rotate(5deg); /* Desplazamiento lateral con rotación */
+  filter: brightness(110%) contrast(120%); /* Aumenta el brillo y contraste */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada para dar un efecto de resaltar */
+}
+
+/* Efecto de animación de entrada: Entrada con desplazamiento y suavizado */
+.hero_img-container img {
+  animation: slideInAndFade 1.5s ease-out forwards; /* Animación de entrada */
+}
+
+/* Keyframes para la animación de entrada */
+@keyframes slideInAndFade {
+  0% {
+      opacity: 0;
+      transform: translateY(40px) rotate(15deg); /* Desplazamiento desde abajo con rotación */
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg); /* Finaliza en su lugar original */
+  }
+}
+
+
+
 .hero_detail-box {
   color: #494949;
 }
@@ -382,18 +470,30 @@ a:focus {
   color: #fefeff;
 }
 
+/* Estilo general para las imágenes */
 .colection_img-container img {
-  width: 60%;
-  max-width: 200; /* Limita el tamaño máximo de la imagen */
-  height: auto; /* Mantiene las proporciones de la imagen */
-  object-fit: cover; /* Recorta la imagen para ajustarse al área sin distorsionarla */
-  margin-top: 20px; /* Ajusta el espacio superior si es necesario */
+  width: 60%; /* Establece el ancho de la imagen al 60% */
+  height: auto; /* Mantiene la proporción */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra para dar un efecto de profundidad */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efectos */
+  display: block; /* Asegura que la imagen se comporte como un bloque */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
 }
 
-.colection_img-container {
-  padding: 15px;
-  text-align: center;
+/* Efecto al pasar el ratón */
+.colection_img-container img:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada */
 }
+
+
+/* Opcional: Si quieres aplicar un borde más estilizado a la imagen */
+.colection_img-container img {
+  border: 3px solid #fff; /* Borde blanco */
+  border-radius: 12px; /* Bordes redondeados */
+}
+
 
 .colection_detail-box {
   padding-right: 15px;
@@ -410,6 +510,15 @@ a:focus {
 
 
 /* end colection section */
+
+.icono img {
+  width: 4.5em; /* El tamaño de la imagen será proporcional al tamaño de la fuente */
+  height: auto; /* Mantiene la proporción de la imagen */
+  vertical-align: middle; /* Alinea la imagen con el texto */
+}
+
+
+
 
 /* client section */
 .client_section h2,
