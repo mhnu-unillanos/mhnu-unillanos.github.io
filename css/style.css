@@ -38,6 +38,9 @@ h2 {
   color: #6ebca8; /* Cambia el código hexadecimal por el color que desees */
 }
 
+
+
+
 .info-title {
   color: #6ebca8; /* Ejemplo: Azul */
   font-size: 28px; /* Ajuste opcional del tamaño */
@@ -624,18 +627,18 @@ a:focus {
 
 /* end client section */
 
-/* contact section */
+/* equipo section */
 
-.contact_section {
+.equipo_section {
   padding: 75px 45px;
   font-family: 'Poppins', sans-serif;
 }
 
-.contact_section .row {
+.equipo_section .row {
   align-items: center;
 }
 
-.contact_section input {
+.equipo_section input {
   border: none;
   outline: none;
   border-bottom: 1px solid #000;
@@ -645,7 +648,7 @@ a:focus {
 
 
 
-.contact_form-container button {
+.equipo_form-container button {
   border: none;
   background-color: #6bd1bd;
   color: #fff;
@@ -656,18 +659,18 @@ a:focus {
   font-weight: bold;
 }
 
-.contact_img-box {
+.equipo_img-box {
 
   display: flex;
   align-items: center;
 
 }
 
-.contact_img-box img {
+.equipo_img-box img {
   width: 100%;
 }
 
-.contact_section h2 {
+.equipo_section h2 {
   font-size: 26px;
   color: #010103;
   font-weight: 600;
@@ -676,7 +679,7 @@ a:focus {
 }
 
 
-/* end contact section */
+/* end equipo section */
 
 
 /* info section */
